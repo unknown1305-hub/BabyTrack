@@ -275,12 +275,6 @@ export default function App() {
   const [profile, setProfile] = useState(() => {
     // Clear the old demonstration profile and logs once after this update.
     // Deliberately preserve babytrack_wg_meals so all seven preset meals remain unchanged.
-    if (localStorage.getItem('babytrack_wg_clean_start_v1') !== 'done') {
-      localStorage.removeItem('babytrack_wg_profile');
-      localStorage.removeItem('babytrack_wg_nutrition_logs');
-      localStorage.removeItem('babytrack_wg_weight_logs');
-      localStorage.setItem('babytrack_wg_clean_start_v1', 'done');
-    }
     const saved = localStorage.getItem('babytrack_wg_profile');
     return saved ? JSON.parse(saved) : {
       gender: '',
